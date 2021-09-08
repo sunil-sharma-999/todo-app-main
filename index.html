@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="./app.js" defer></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Sunil Sharma | Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="">
+    <div class="wrap">
+      <picture>
+        <source
+          media="(min-width:800px)"
+          srcset="./images/bg-desktop-dark.jpg"
+          class="imgSrc"
+        />
+        <source
+          media="(max-width:800px)"
+          srcset="./images/bg-mobile-dark.jpg"
+          class="imgSrc"
+        />
+        <img
+          src="./images/bg-desktop-dark.jpg"
+          alt="Header image"
+          class="imgMain"
+        />
+      </picture>
+      <!-- todo list wrap -->
+      <div class="todo-wrap">
+        <header>
+          <a
+            href="https://linktr.ee/Sunil.sharma.9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="logo"
+            >T O D O</a
+          >
+          <img
+            src="./images/icon-sun.svg"
+            alt="sun"
+            class="theme"
+            onclick="theme()"
+          />
+        </header>
+        <div class="input-wrap">
+          <div class="circle-border-input">
+            <div class="circle-input"></div>
+          </div>
+          <input type="text" class="add" placeholder="Create a new todo.." />
+        </div>
+        <!-- list -->
+        <div class="card">
+          <div class="tasks-wrap"></div>
+          <!-- info -->
+          <div class="task-info">
+            <p class="items"><span></span> items left</p>
+            <p class="clear" onclick="clearFinishedTask()">Clear Completed</p>
+          </div>
+        </div>
+        <!-- filter -->
+        <div class="filter">
+          <p class="current all" onclick="filter(this)">All</p>
+          <p class="active" onclick="filter(this)">Active</p>
+          <p class="completed" onclick="filter(this)">Completed</p>
+        </div>
+        <!-- instruction for reorder -->
+        <p class="reorder">Drag and drop to reorder list</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.task-info p:not(.items),
+.filter p,
+.theme,
+.cross,
+.circle {
+  cursor: pointer;
+}
+
+.task,
+.items {
+  cursor: default;
+}
+
+body,
+body.light {
+  background-color: #161722;
+}
+
+body .wrap,
+body.light .wrap {
+  height: 100vh;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body .wrap .imgMain,
+body.light .wrap .imgMain {
+  position: relative;
+  width: 100%;
+}
+
+body .wrap .todo-wrap,
+body.light .wrap .todo-wrap {
+  position: absolute;
+  width: 90vw;
+  max-width: 330px;
+  color: white;
+  margin: auto;
+  top: 3rem;
+  left: 0;
+  right: 0;
+}
+
+body .wrap .todo-wrap header,
+body.light .wrap .todo-wrap header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .wrap .todo-wrap header .logo,
+body.light .wrap .todo-wrap header .logo {
+  text-decoration: none;
+  color: #fafafa;
+  font-size: 1.65rem;
+  font-weight: 700;
+}
+
+body .wrap .todo-wrap header .theme,
+body.light .wrap .todo-wrap header .theme {
+  width: 20px;
+}
+
+body .wrap .todo-wrap .input-wrap,
+body.light .wrap .todo-wrap .input-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3rem;
+  border-radius: 5px;
+  margin: 2.1rem 0 1.1rem 0;
+  background-color: #25273c;
+  -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.6);
+}
+
+body .wrap .todo-wrap .input-wrap .circle-border-input,
+body.light .wrap .todo-wrap .input-wrap .circle-border-input {
+  background-color: #393a4c;
+  border-radius: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 1.2rem;
+  padding: 2px;
+}
+
+body .wrap .todo-wrap .input-wrap .circle-border-input .circle-input,
+body.light .wrap .todo-wrap .input-wrap .circle-border-input .circle-input {
+  background-color: #25273c;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+body .wrap .todo-wrap .input-wrap .add,
+body.light .wrap .todo-wrap .input-wrap .add {
+  text-transform: capitalize;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0 0.8rem;
+  color: #777a92;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+body .wrap .todo-wrap .input-wrap .add:focus,
+body.light .wrap .todo-wrap .input-wrap .add:focus {
+  outline: none;
+  color: #cacde8;
+}
+
+body .wrap .todo-wrap .card,
+body.light .wrap .todo-wrap .card {
+  background-color: #25273c;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.5);
+}
+
+body .wrap .todo-wrap .card .task,
+body.light .wrap .todo-wrap .card .task {
+  border-bottom: 1px solid #393a4c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3.3rem;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 0.85rem;
+}
+
+body .wrap .todo-wrap .card .task p,
+body.light .wrap .todo-wrap .card .task p {
+  margin-left: 1rem;
+  color: #cacde8;
+  text-transform: capitalize;
+}
+
+body .wrap .todo-wrap .card .task .cross,
+body.light .wrap .todo-wrap .card .task .cross {
+  position: absolute;
+  right: 20px;
+  width: 0.9rem;
+  height: auto;
+}
+
+body .wrap .todo-wrap .card .task .circle-border,
+body.light .wrap .todo-wrap .card .task .circle-border {
+  background-color: #393a4c;
+  border-radius: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 1.2rem;
+  padding: 2px;
+}
+
+body .wrap .todo-wrap .card .task .circle-border .circle,
+body.light .wrap .todo-wrap .card .task .circle-border .circle {
+  background-color: #25273c;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+body .wrap .todo-wrap .card .task .circle-border .circle img,
+body.light .wrap .todo-wrap .card .task .circle-border .circle img {
+  width: 70%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+}
+
+body .wrap .todo-wrap .card .task .circle-border:hover,
+body.light .wrap .todo-wrap .card .task .circle-border:hover {
+  background: linear-gradient(45deg, #57ddff, #c058f3);
+}
+
+body .wrap .todo-wrap .card .task-info,
+body.light .wrap .todo-wrap .card .task-info {
+  color: #777a92;
+  font-size: 0.8rem;
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.2rem;
+}
+
+body .wrap .todo-wrap .filter,
+body.light .wrap .todo-wrap .filter {
+  color: #777a92;
+  font-size: 0.85rem;
+  font-weight: 700;
+  height: 3.5rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #25273c;
+  margin: 0.8rem 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 30px 30px -20px rgba(0, 0, 0, 0.8);
+}
+
+body .wrap .todo-wrap .filter p,
+body.light .wrap .todo-wrap .filter p {
+  margin: 0 0.7rem;
+}
+
+body .wrap .todo-wrap .filter .current,
+body.light .wrap .todo-wrap .filter .current {
+  color: #3a7bfd;
+}
+
+body .wrap .todo-wrap .reorder,
+body.light .wrap .todo-wrap .reorder {
+  color: #777a92;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 2.55rem 0;
+}
+
+@media screen and (min-width: 800px) {
+  body .wrap .todo-wrap,
+  body.light .wrap .todo-wrap {
+    font-size: 1.1rem;
+    top: 4.8rem;
+    max-width: 530px;
+  }
+  body .wrap .todo-wrap header .logo,
+  body.light .wrap .todo-wrap header .logo {
+    font-size: 2.6rem;
+  }
+  body .wrap .todo-wrap header .theme,
+  body.light .wrap .todo-wrap header .theme {
+    width: 25px;
+  }
+  body .wrap .todo-wrap .input-wrap,
+  body.light .wrap .todo-wrap .input-wrap {
+    font-size: inherit;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    -webkit-box-shadow: 0 1.5rem 30px -20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 1.5rem 30px -20px rgba(0, 0, 0, 0.4);
+  }
+  body .wrap .todo-wrap .input-wrap .add,
+  body.light .wrap .todo-wrap .input-wrap .add {
+    font-size: inherit;
+  }
+  body .wrap .todo-wrap .card .task,
+  body.light .wrap .todo-wrap .card .task {
+    font-size: inherit;
+    height: 3.85rem;
+  }
+  body .wrap .todo-wrap .card .task-info,
+  body.light .wrap .todo-wrap .card .task-info {
+    height: 4rem;
+  }
+  body .wrap .todo-wrap .card .task-info .clear,
+  body .wrap .todo-wrap .card .task-info .items,
+  body.light .wrap .todo-wrap .card .task-info .clear,
+  body.light .wrap .todo-wrap .card .task-info .items {
+    z-index: 1;
+  }
+  body .wrap .todo-wrap .filter,
+  body.light .wrap .todo-wrap .filter {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    position: absolute;
+    bottom: 5.6rem;
+  }
+}
+
+body.light {
+  background-color: #fafafa;
+}
+
+body.light .wrap .todo-wrap .input-wrap {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 2rem 2rem -1rem rgba(128, 128, 128, 0.25);
+          box-shadow: 0 2rem 2rem -1rem rgba(128, 128, 128, 0.25);
+}
+
+body.light .wrap .todo-wrap .input-wrap .circle-border-input {
+  background-color: #cacde8;
+}
+
+body.light .wrap .todo-wrap .input-wrap .circle-border-input .circle-input {
+  background-color: #fafafa;
+}
+
+body.light .wrap .todo-wrap .input-wrap .add {
+  color: #777a92;
+}
+
+body.light .wrap .todo-wrap .input-wrap .add:focus {
+  color: #777a92;
+}
+
+body.light .wrap .todo-wrap .card {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 2rem 2rem -1rem rgba(128, 128, 128, 0.25);
+          box-shadow: 0 2rem 2rem -1rem rgba(128, 128, 128, 0.25);
+}
+
+body.light .wrap .todo-wrap .card .task {
+  border-bottom: 1px solid #e4e5f1;
+}
+
+body.light .wrap .todo-wrap .card .task p {
+  color: #777a92;
+}
+
+body.light .wrap .todo-wrap .card .task .circle-border {
+  background-color: #cacde8;
+}
+
+body.light .wrap .todo-wrap .card .task .circle-border .circle {
+  background-color: #fafafa;
+}
+
+body.light .wrap .todo-wrap .filter {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.circle.checked {
+  background: linear-gradient(45deg, #57ddff, #c058f3);
+}
+
+body .task p.cancel {
+  text-decoration: line-through;
+  color: #777a92 !important;
+}
+
+body.light p.cancel {
+  color: #777a92;
+}
+
+.dragstart {
+  opacity: 0.5;
+}
+
+.github {
+  background-color: white;
+}
+/*# sourceMappingURL=style.css.map */

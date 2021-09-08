@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin font() {
+  font-family: 'Josefin Sans', sans-serif;
+}
+// ## Colors
+
+// ### Primary
+
+$BrightBlue: hsl(220, 98%, 61%);
+@mixin gradient {
+  background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+// ### Neutral
+
+// ### Light Theme
+
+$VeryLightGray: hsl(0, 0%, 98%);
+$VeryLightGrayishBlue: hsl(236, 33%, 92%);
+$LightGrayishBlue: hsl(233, 11%, 84%);
+$DarkGrayishBlue: hsl(236, 9%, 61%);
+$VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+// ### Dark Theme
+
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlueHover: hsl(236, 33%, 92%);
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+// hover
+.task-info p:not(.items),
+.filter p,
+.theme,
+.cross,
+.circle {
+  cursor: pointer;
+}
+
+.task,
+.items {
+  cursor: default;
+}
+
+body,
+body.light {
+  background-color: $VeryDarkBlue;
+  .wrap {
+    height: 100vh;
+    @include font();
+    .imgMain {
+      position: relative;
+      width: 100%;
+    }
+    .todo-wrap {
+      position: absolute;
+      width: 90vw;
+      max-width: 330px;
+      color: white;
+      margin: auto;
+      top: 3rem;
+      left: 0;
+      right: 0;
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+          text-decoration: none;
+          color: $VeryLightGray;
+          font-size: 1.65rem;
+          font-weight: 700;
+        }
+        .theme {
+          width: 20px;
+        }
+      }
+      // add to do
+      .input-wrap {
+        display: flex;
+        height: 3rem;
+        border-radius: 5px;
+        margin: 2.1rem 0 1.1rem 0;
+        background-color: $VeryDarkDesaturatedBlue;
+        box-shadow: 0 30px 30px -20px rgba($color: black, $alpha: 0.6);
+        .circle-border-input {
+          background-color: $VeryDarkGrayishBlue;
+          border-radius: 100%;
+          align-self: center;
+          margin-left: 1.2rem;
+          padding: 2px;
+          .circle-input {
+            background-color: $VeryDarkDesaturatedBlue;
+            border-radius: 100%;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .add {
+          text-transform: capitalize;
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
+          border: none;
+          padding: 0 0.8rem;
+          color: $DarkGrayishBlue;
+          font-family: inherit;
+          font-size: 0.8rem;
+          font-weight: 700;
+          &:focus {
+            outline: none;
+            color: $LightGrayishBlue;
+          }
+        }
+      }
+      // card
+      .card {
+        background-color: $VeryDarkDesaturatedBlue;
+        border-radius: 4px;
+        box-shadow: 0 30px 30px -20px rgba($color: black, $alpha: 0.5);
+        .task {
+          border-bottom: 1px solid $VeryDarkGrayishBlue;
+          display: flex;
+          height: 3.3rem;
+          width: 100%;
+          align-items: center;
+          position: relative;
+          font-size: 0.85rem;
+          p {
+            margin-left: 1rem;
+            color: $LightGrayishBlue;
+            text-transform: capitalize;
+          }
+          .cross {
+            position: absolute;
+            right: 20px;
+            width: 0.9rem;
+            height: auto;
+          }
+          .circle-border {
+            background-color: $VeryDarkGrayishBlue;
+            border-radius: 100%;
+            align-self: center;
+            margin-left: 1.2rem;
+            padding: 2px;
+            .circle {
+              // background: none;
+              background-color: $VeryDarkDesaturatedBlue;
+              border-radius: 100%;
+              width: 20px;
+              height: 20px;
+              position: relative;
+              img {
+                width: 70%;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                display: none;
+              }
+            }
+            &:hover {
+              @include gradient();
+            }
+          }
+        }
+        .task-info {
+          color: $DarkGrayishBlue;
+          font-size: 0.8rem;
+          height: 50px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 1.2rem;
+        }
+      }
+      // filter
+      .filter {
+        color: $DarkGrayishBlue;
+        font-size: 0.85rem;
+        font-weight: 700;
+        height: 3.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $VeryDarkDesaturatedBlue;
+        margin: 0.8rem 0;
+        border-radius: 4px;
+        box-shadow: 0 30px 30px -20px rgba($color: black, $alpha: 0.8);
+        p {
+          margin: 0 0.7rem;
+        }
+        .current {
+          color: $BrightBlue;
+        }
+      }
+      // order
+      .reorder {
+        color: $DarkGrayishBlue;
+        font-size: 0.85rem;
+        text-align: center;
+        margin: 2.55rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  body,
+  body.light {
+    .wrap {
+      .todo-wrap {
+        font-size: 1.1rem;
+        top: 4.8rem;
+        max-width: 530px;
+        header {
+          .logo {
+            font-size: 2.6rem;
+          }
+          .theme {
+            width: 25px;
+          }
+        }
+        .input-wrap {
+          font-size: inherit;
+          height: 4rem;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 1.5rem 30px -20px rgba($color: black, $alpha: 0.4);
+          .add {
+            font-size: inherit;
+          }
+        }
+        // card
+        .card {
+          .task {
+            font-size: inherit;
+            height: 3.85rem;
+          }
+          .task-info {
+            height: 4rem;
+            .clear,
+            .items {
+              z-index: 1;
+            }
+          }
+        }
+        .filter {
+          background-color: transparent;
+          box-shadow: none;
+          position: absolute;
+          bottom: 5.6rem;
+        }
+      }
+    }
+  }
+}
+
+body.light {
+  background-color: $VeryLightGray;
+  .wrap {
+    .todo-wrap {
+      .input-wrap {
+        background-color: $VeryLightGray;
+        box-shadow: 0 2rem 2rem -1rem rgba($color: grey, $alpha: 0.25);
+        .circle-border-input {
+          background-color: $LightGrayishBlue;
+          .circle-input {
+            background-color: $VeryLightGray;
+          }
+        }
+        .add {
+          color: $DarkGrayishBlue;
+          &:focus {
+            color: $DarkGrayishBlue;
+          }
+        }
+      }
+      .card {
+        background-color: $VeryLightGray;
+        box-shadow: 0 2rem 2rem -1rem rgba($color: grey, $alpha: 0.25);
+        .task {
+          border-bottom: 1px solid $VeryLightGrayishBlue;
+          p {
+            color: $DarkGrayishBlue;
+          }
+          .circle-border {
+            background-color: $LightGrayishBlue;
+            .circle {
+              background-color: $VeryLightGray;
+            }
+          }
+        }
+      }
+      .filter {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// checked
+.circle.checked {
+  @include gradient();
+}
+
+body {
+  .task {
+    p.cancel {
+      text-decoration: line-through;
+      color: $DarkGrayishBlue !important;
+    }
+  }
+}
+
+body.light {
+  p.cancel {
+    color: $DarkGrayishBlue;
+  }
+}
+
+.dragstart {
+  opacity: 0.5;
+}
+
+.github {
+  background-color: white;
+}
