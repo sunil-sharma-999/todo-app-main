@@ -152,7 +152,7 @@ const sortable = Sortable.create(tasksWrap, {
 });
 
 circles.forEach((c) => {
-  c.addEventListener('mousedown', (e) => {
+  c.addEventListener('touchstart', (e) => {
     e.preventDefault();
   });
 });
