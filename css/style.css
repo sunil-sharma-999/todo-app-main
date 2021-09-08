@@ -200,6 +200,13 @@ body.light .wrap .todo-wrap .card .task .circle-border:hover {
   background: linear-gradient(45deg, #57ddff, #c058f3);
 }
 
+body .wrap .todo-wrap .card .task .circle-border:focus{
+background-color: #393a4c;
+}
+body.light .wrap .todo-wrap .card .task .circle-border:focus {
+  background-color: #cacde8;
+}
+
 body .wrap .todo-wrap .card .task-info,
 body.light .wrap .todo-wrap .card .task-info {
   color: #777a92;
