@@ -200,6 +200,16 @@ body.light .wrap .todo-wrap .card .task .circle-border:hover {
   background: linear-gradient(45deg, #57ddff, #c058f3);
 }
 
+body .wrap .todo-wrap .card .task .circle-border:focus,
+body.light .wrap .todo-wrap .card .task .circle-border:focus {
+  background-color: #25273c;
+}
+
+body .wrap .todo-wrap .card .task .circle-border:active,
+body.light .wrap .todo-wrap .card .task .circle-border:active {
+  background-color: #25273c;
+}
+
 body .wrap .todo-wrap .card .task-info,
 body.light .wrap .todo-wrap .card .task-info {
   color: #777a92;
@@ -357,6 +367,14 @@ body.light .wrap .todo-wrap .card .task .circle-border {
 
 body.light .wrap .todo-wrap .card .task .circle-border .circle {
   background-color: #fafafa;
+}
+
+body.light .wrap .todo-wrap .card .task .circle-border:focus {
+  background-color: #cacde8;
+}
+
+body.light .wrap .todo-wrap .card .task .circle-border:active {
+  background-color: #cacde8;
 }
 
 body.light .wrap .todo-wrap .filter {

@@ -150,9 +150,3 @@ const sortable = Sortable.create(tasksWrap, {
   animation: 200,
   ghostClass: 'dragstart',
 });
-
-circles.forEach((c) => {
-  c.addEventListener('touchstart', (e) => {
-    e.preventDefault();
-  });
-});
