@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .task-info p:not(.items),
 .filter p,
 .theme,
