@@ -87,7 +87,6 @@ const bgHeader = (theme) => {
 };
 
 const check = (data) => {
-  data.preventDefault();
   const current = document.querySelector('.current');
   if (data.className.includes('checked')) {
     data.children[0].style.display = 'none';
@@ -150,4 +149,13 @@ count();
 const sortable = Sortable.create(tasksWrap, {
   animation: 200,
   ghostClass: 'dragstart',
+});
+
+circles.forEach((c) => {
+  c.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+  });
+  c.addEventListener('touchend', (e) => {
+    e.preventDefault();
+  });
 });
